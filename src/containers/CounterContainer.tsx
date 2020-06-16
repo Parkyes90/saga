@@ -5,9 +5,13 @@ import useCounterActions from '../hooks/useCounterActions';
 
 const CounterContainer: React.FC = () => {
   const number = useCounter();
-  const { onDecrease, onIncrease } = useCounterActions();
+  const { onIncreaseAsync, onDecreaseAsync } = useCounterActions();
   return (
-    <Counter number={number} onDecrease={onDecrease} onIncrease={onIncrease} />
+    <Counter
+      number={number}
+      onDecrease={onDecreaseAsync}
+      onIncrease={onIncreaseAsync}
+    />
   );
 };
 
